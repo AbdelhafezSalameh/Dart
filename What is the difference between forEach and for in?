@@ -1,0 +1,15 @@
+forEach:
+
+forEach is a higher-order function that takes a function as an argument and applies that function to each element in a collection.
+
+It is typically used with lists and can be used with maps (iterating over map values or entries).
+
+forEach is more concise and is often preferred for simple iterations where you don't need to track the index or make complex modifications to the collection.
+
+It's easy to read and write, and it can be used with collections of any size.for-in:
+
+for-in is a traditional loop construct that iterates over the elements of an iterable collection (e.g., lists, maps, sets, strings) by creating a variable for each element.
+
+It provides more control over the iteration process, as you can access both the element and its index (in the case of a list).
+
+for-in can be used to modify the elements of the collection during iteration, which can be more cumbersome with forEach.
