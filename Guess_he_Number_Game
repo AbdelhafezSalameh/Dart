@@ -1,0 +1,26 @@
+import 'dart:io';
+
+void main() {
+  var rng = Random();
+  int targetNumber = rng.nextInt(100);
+  //print(targetNumber);
+  int i = 0;
+  while (i == 0) {
+    stdout.write('Enter a number : ');
+    int num = int.parse(stdin.readLineSync()!);
+
+    int max = num - targetNumber;
+    int min = targetNumber - num;
+
+    if (num == targetNumber) {
+      print('Correct Number: $targetNumber');
+      break;
+    } else if (max > 40) {
+      print('guess too high');
+    } else if (min > 40) {
+      print('guess too low');
+    } else {
+      print('close to correct');
+    }
+  }
+}
