@@ -34,8 +34,8 @@ class Student extends Human {
 void main() {
   Human h1 = new Human("Hafez", 21);
   h1.display();
-  Human e1 = new Employee("Abd", 25, "Developer");
+  Employee e1 = new Employee("Abd", 25, "Developer");
   e1.display();
-  Human s1 = new Student("Omar", 28, 3200);
+  Student s1 = new Student("Omar", 28, 3200);
   s1.display();
 }
