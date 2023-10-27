@@ -1,0 +1,87 @@
+class Displayable {
+  String companyName = "Orange";
+
+  void displayAllDetails() {}
+}
+
+abstract class Employee {
+  String name;
+  int SSN;
+
+  Employee(this.name, this.SSN) {}
+
+  set setName(String name) {
+    this.name = name;
+  }
+
+  String get getName => name;
+
+  set setSSN(int SSN) {
+    this.SSN = SSN;
+  }
+
+  int get getSSN => SSN;
+
+  double earning();
+}
+
+class Salarid_Employee extends Employee implements Displayable {
+  @override
+  String companyName = "Orange";
+  double salary;
+  double bouns;
+  double deducation;
+  double? finalSalary;
+
+  Salarid_Employee(
+      super.name, super.SSN, this.salary, this.bouns, this.deducation) {}
+
+  @override
+  double earning() {
+    double finalSalary = salary + bouns - deducation;
+    return finalSalary;
+  }
+
+  @override
+  void displayAllDetails() {
+    print("Company Name = ${companyName} ");
+    print("Name = ${super.name} ");
+    print("SSN = ${super.SSN} ");
+    print("Bouns = ${this.bouns} ");
+    print("Deducation = ${this.deducation} ");
+    print("Salary = ${earning()} ");
+  }
+}
+
+class Hourly_Employee extends Employee implements Displayable {
+  @override
+  String companyName = "Orange";
+  double numberOfHourRate;
+  double numberOfHour;
+
+  Hourly_Employee(
+      super.name, super.SSN, this.numberOfHour, this.numberOfHourRate) {}
+
+  @override
+  double earning() {
+    double finalSalary = numberOfHour * numberOfHourRate;
+    return finalSalary;
+  }
+
+  @override
+  void displayAllDetails() {
+    print("Company Name = ${companyName} ");
+    print("Name = ${super.name} ");
+    print("SSN = ${super.SSN} ");
+    print("Number Of Hour = ${this.numberOfHour} ");
+    print("Number Of HourRate = ${this.numberOfHourRate} ");
+    print("Salary = ${earning()} ");
+  }
+}
+
+void main() {
+  Salarid_Employee emp1 = new Salarid_Employee("Hafez", 3200, 700, 100, 50);
+  emp1.displayAllDetails();
+  Hourly_Employee emp2 = new Hourly_Employee("Abd", 3200, 200, 10);
+  emp2.displayAllDetails();
+}
