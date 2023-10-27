@@ -1,0 +1,13 @@
+void main() {
+  var numbers = [1, 2, 3, 4, 5];
+
+  for (int i = 0; i < numbers.length; i++) {
+    var calc = {"Double the number", numbers[i] * 2};
+    print("${numbers[i]} * 2 = ${calc}");
+  }
+  var sum = numbers.reduce((v, e) => v + e);
+  print("\nAll Sum: ${sum}");
+
+  var evenNumbers = numbers.where((number) => number % 2 == 0).toList();
+  print("\nEven : $evenNumbers");
+}
