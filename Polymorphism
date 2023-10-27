@@ -1,0 +1,39 @@
+class Languge {
+  String name;
+
+  Languge(this.name) {}
+
+  void display() {
+    print("Name: ${name}");
+  }
+}
+
+class Arabic extends Languge {
+  int numberOfLetters;
+
+  Arabic(super.name, this.numberOfLetters) {}
+
+  void display() {
+    print("Name: ${name}");
+    print("Number Of Letters: ${numberOfLetters}");
+  }
+}
+
+class Jordan extends Arabic {
+  String city;
+
+  Jordan(super.name, super.numberOfLetters, this.city) {}
+
+  void display() {
+    print("Name: ${name}");
+    print("Number Of Letters: ${numberOfLetters}");
+    print("city: ${city}");
+  }
+}
+
+void main() {
+  Languge a1 = new Arabic("Arabic", 28);
+  a1.display();
+  Arabic j1 = new Jordan("Arabic", 28, "Amman");
+  j1.display();
+}
