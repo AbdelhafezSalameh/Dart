@@ -1,0 +1,12 @@
+int calc(int JustNum) {
+  int defultNum = 9;
+  int summation() {
+    return JustNum + defultNum;
+  }
+
+  return summation();
+}
+
+void main() {
+  print(calc(5));
+}
